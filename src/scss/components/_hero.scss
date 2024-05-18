@@ -1,0 +1,137 @@
+@use "../variables" as *;
+@use "../media" as *;
+
+.hero {
+  padding-top: 200px;
+  color: $light;
+  background-color: black;
+  padding: 218px 0 245px;
+  background-color: $purple;
+  background-image: url("/img/bg-dog.png"), url("/img/pattern.svg");
+  background-size: contain, auto;
+  background-position: right bottom, center;
+  background-repeat: no-repeat, repeat;
+
+  @include bigscreen {
+    background-image: url("/img/bg-dog-bigscreen.png"), url("/img/pattern.svg");
+    background-position: left 48vw bottom 0, center;
+    background-size: 1850px, auto;
+  }
+
+  @include laptop {
+    padding: 148px 0 172px;
+    background-image: url("/img/bg-dog-laptop.png"), url("/img/pattern.svg");
+  }
+
+  @include tablet {
+    padding: 148px 0 461px;
+    background-size: 655px 564px, cover;
+    background-image: url("/img/bg-dog-tablet.png"), url("/img/pattern.svg");
+  }
+
+  @include mobile {
+    padding: 100px 0 284px;
+    background-size: 294px 261px, cover;
+    background-image: url("/img/bg-dog-mobile.png"), url("/img/pattern.svg");
+  }
+
+  &_store {
+    background-color: $green;
+    background-image: url("/img/bg-cat.png"), url("/img/pattern.svg");
+    background-size: 839px, auto;
+
+    @include laptop {
+      background-size: 639px, auto;
+    }
+
+    @include tablet {
+      background-size: 100%, auto;
+    }
+  }
+
+  &__title {
+    width: 810px;
+    max-width: 100%;
+    margin-bottom: 50px;
+
+    @media (max-width: 1300px) {
+      width: 660px;
+    }
+
+    @include laptop {
+      width: 588px;
+      margin-bottom: 32px;
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text {
+    max-width: 440px;
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  
+    @include bigscreen {
+      max-width: 540px;
+    }
+
+    @include laptop {
+      max-width: 360px;
+      margin-bottom: 40px;
+    }
+  
+    @include mobile {
+      margin-bottom: 20px;
+  }
+}
+
+  &__store-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: max-content;
+    border-radius: 40px;
+    padding: 16px 24px;
+    background-color: $green;
+    font-weight: 700;
+    text-align: center;
+    color: $light;
+    outline: 1px solid transparent;
+    transition-property: background-color, transform;
+    transition-duration: 0.3s, 0.1s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      background: #00772f;
+    }
+
+    &:focus-visible {
+      outline-color: $carrot;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url("/img/arrow-to-store.svg") no-repeat center/contain;
+    }
+
+    @include laptop {
+      padding: 16px 36px;
+    }
+
+    @include mobile {
+      padding: 11px 24px;
+    }
+  }
+}
