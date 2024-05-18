@@ -29,6 +29,10 @@
 	display: flex;
 	overflow: hidden;
 
+	@include mobile {
+		flex-direction: column;
+	}
+
 	&:before {
 		content: '';
 		display: block;
@@ -36,6 +40,11 @@
 		background-image: url('/img/cart-dog.jpg');
 		background-size: cover;
 		background-position: center;
+
+		@include mobile {
+			width: 100%;
+			height: 200px;
+		}
 	}
 
 	&_content {
@@ -43,6 +52,10 @@
 		padding: 24px;
 		display: flex;
 		flex-direction: column;
+
+		@include mobile {
+			width: 100%;
+		}
 	}
 
 	&__title {

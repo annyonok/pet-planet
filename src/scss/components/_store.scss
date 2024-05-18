@@ -10,11 +10,24 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 40px;
+
+        @include mobile {
+            flex-wrap: wrap;
+            justify-content: end;
+            gap: 30px;
+        }
     }
 
     &__categories {
         display: flex;
         gap: 28px;
+        overflow-x: auto;
+
+        @include mobile {
+            flex-grow: 1;
+            gap: 16px;
+        }
+
     }
 
     &__category-button {
@@ -59,7 +72,7 @@
         color: $light;
 
         @include bigscreen {
-            bottom: 4px;
+            vertical-align: middle;
         }
     }
 
@@ -90,5 +103,6 @@
 
     &__item {
         display: flex;
+        justify-self: center;
     }
 }
