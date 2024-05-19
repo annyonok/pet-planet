@@ -157,6 +157,18 @@
 		font-weight: 700;
 		font-size: 16px;
 		color: $light;
+
+		&:hover {
+            background: #981fd1;
+          }
+      
+          &:focus-visible {
+            outline-color: $carrot;
+          }
+      
+          &:active {
+            transform: scale(0.9);
+          }
 	}
 
 	&__cart-price {

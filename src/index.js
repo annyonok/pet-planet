@@ -37,3 +37,6 @@ productList.addEventListener("click", ({ target }) => {
 };
 
 init();
+
+
+

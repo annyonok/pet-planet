@@ -59,26 +59,39 @@
     &__cart-button {
         position: relative;
         display: block;
-        width: 28px;
-        height: 28px;
+        width: 56px;
+        height: 56px;
+
+        @include mobile {
+            width: 28px;
+            height: 28px;
+        }
     }
 
     &__cart-cnt {
         position: relative;
         z-index: 2;
         font-weight: 700;
-        font-size: 12px;
+        font-size: 20px;
         line-height: 1;
         color: $light;
+        top: 4px;
 
         @include bigscreen {
             vertical-align: middle;
+        }
+
+        @include mobile {
+            font-size: 12px;
+            top: 2px;
         }
     }
 
     &__cart-icon {
         position: absolute;
         inset: 0;
+        width: 100%;
+        height: 100%;
         z-index: 1;
     }
 
@@ -105,4 +118,7 @@
         display: flex;
         justify-self: center;
     }
+
 }
+
+
